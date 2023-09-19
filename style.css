@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@350&display=swap');
+
+/* ------------------------ CSS RESET ------------------------ */
+
+*, *::before, *::after {
+    font-family: 'Raleway', sans-serif;;
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    background-color: #1A1A1B;
+    color: #DDFFF7;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+  
+/* Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+ul, li {
+    padding: 0;
+    text-indent: 0;
+    list-style-type: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+/* Create root stacking context */
+#root, #__next {
+    isolation: isolate;
+}
+
+/* ------------------------ HEADER ------------------------ */
+
+header {
+    background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='100%25' width='100%25'%3E%3Cdefs%3E%3Cpattern id='doodad' width='38' height='38' viewBox='0 0 40 40' patternUnits='userSpaceOnUse' patternTransform='rotate(140)'%3E%3Crect width='100%25' height='100%25' fill='rgba(26, 26, 27,1)'/%3E%3Ccircle cx='-10' cy='15' r='1' fill='rgba(43, 217, 254,1)'/%3E%3Ccircle cx='0' cy='25' r='1' fill='rgba(43, 217, 254,1)'/%3E%3Ccircle cx='10' cy='15' r='1' fill='rgba(43, 217, 254,1)'/%3E%3Ccircle cx='30' cy='15' r='1' fill='rgba(43, 217, 254,1)'/%3E%3Ccircle cx='20' cy='25' r='1' fill='rgba(43, 217, 254,1)'/%3E%3Ccircle cx='40' cy='25' r='1' fill='rgba(43, 217, 254,1)'/%3E%3Ccircle cx='15' cy='15' r='1' fill='rgba(224, 202, 60,1)'/%3E%3Ccircle cx='35' cy='15' r='1' fill='rgba(224, 202, 60,1)'/%3E%3Ccircle cx='5' cy='25' r='1' fill='rgba(224, 202, 60,1)'/%3E%3Ccircle cx='25' cy='25' r='1' fill='rgba(224, 202, 60,1)'/%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23doodad)' height='200%25' width='200%25'/%3E%3C/svg%3E ");
+    padding-top: 1em;
+}
+
+header h1 {
+    /* border: 1px solid magenta; */
+    margin: 0 auto;
+    background-color: #1A1A1B;
+    padding: .15em 0;
+    font-size: 2.5rem;
+    max-width: 300px;
+}
+
+header h3 {
+    /* border: 1px solid cyan; */
+    margin: .5em auto .5em auto;
+    background-color: #1A1A1B;
+    padding: .5em 0;
+    max-width: 300px;
+}
+
+header h1, header h3, header h4 {
+    text-align: center;
+}
+
+.profile--img {
+    margin: 0 auto 1em auto;
+    border-radius: 15px;
+}
+
+.profile--img:hover {
+    border: 2px solid #2BD9FE;
+    transition: all 0.3s ease-in-out;
+}
+
+.profile--img:not(:hover) {
+    border: 2px solid transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+header h1, header h3, .header--link {
+    border: 2px solid transparent;
+    transition: all 0.3s ease-in-out;
+    border-radius: 15px;
+}
+
+header h1:hover, h3:hover, .header--link:hover {
+    border: 2px solid #2BD9FE;
+    transition: border 0.7s ease-in-out;
+    border-radius: 15px;
+}
+
+header h1:not(:hover), h3:not(:hover), .header--link:not(:hover){
+    border: 2px solid transparent;
+    transition: border 0.7s ease-in-out;
+    border-radius: 15px;
+}
+
+.flex--row {
+    background-color: #1A1A1B;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    margin: .5em auto;
+    padding: .5em 0;
+    max-width: 300px;
+}
+
+/* for some reason, header a tags have extra margin on bottom */
+.header--link {
+    padding-top: .5em;
+}
+
+/* ------------------------ ION ICONS ------------------------ */
+
+header ion-icon {
+    font-size: 2.5rem;
+}
+
+ion-icon {
+    /* border: 1px solid magenta; */
+    font-size: 2rem;
+    padding: 0 .2em;
+}
+
+/* --------------------- SPAN --------------------- */
+
+hr {
+    color: transparent;
+    margin: 1em auto 0 auto;
+}
+
+/* --------------------- ACCORDION --------------------- */
+
+/* Hide input */
+input[type = "radio"] {
+    display: none;
+}
+
+.accordion .content {
+    margin-top: 1rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.7s;
+}
+
+.accordion input[type="radio"]:checked + label + .content {
+    max-height: 400px;
+    transition: max-height 0.7s;
+}
+
+.accordion--li {
+    padding: 1rem;
+    text-align: center;
+}
+
+.accordion li label {
+    cursor: pointer;
+}
+
+label {
+    max-width: 20%;
+    margin: 0 auto .5em auto;
+    border: 1px solid white;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: .6em 0;
+}
+
+#gap--container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3.5rem;
+}
+
+#sub--container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* --------------------- MEDIA QUERIES --------------------- */
+
+/* X-Small Phones */
+@media (max-width: 420px) {
+    header h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Large phones / Tablets */
+@media (max-width: 900px) {
+    /* get rid of text --> ion icon */
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    label h2 {
+        display: none;
+    }
+
+    #gap--container {
+        gap: 1rem;
+    }
+}
+
+/* iPads / some tablets */
+@media (aspect-ratio: 1.439 / 1),  (aspect-ratio: 1.5 / 1) {
+    
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2, h3 {
+        font-size: 2.1rem;
+    }
+
+    h4, p, a {
+        font-size: 1.5rem;
+    }
+
+}
+
+/* Fullscreen / PC */
+@media (min-aspect-ratio: 16 / 9) {
+
+    body {
+        width: 100%;
+        line-height: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    p, a {
+        font-size: 1.3rem;
+    }
+
+    label {
+        padding: 1rem .5rem;
+    }
+
+    header {
+        background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='100%25' width='100%25'%3E%3Cdefs%3E%3Cpattern id='doodad' width='38' height='38' viewBox='0 0 40 40' patternUnits='userSpaceOnUse' patternTransform='rotate(140)'%3E%3Crect width='100%25' height='100%25' fill='rgba(26, 26, 27,1)'/%3E%3Ccircle cx='-10' cy='15' r='1' fill='rgba(43, 217, 254,1)'/%3E%3Ccircle cx='0' cy='25' r='1' fill='rgba(43, 217, 254,1)'/%3E%3Ccircle cx='10' cy='15' r='1' fill='rgba(43, 217, 254,1)'/%3E%3Ccircle cx='30' cy='15' r='1' fill='rgba(43, 217, 254,1)'/%3E%3Ccircle cx='20' cy='25' r='1' fill='rgba(43, 217, 254,1)'/%3E%3Ccircle cx='40' cy='25' r='1' fill='rgba(43, 217, 254,1)'/%3E%3Ccircle cx='15' cy='15' r='1' fill='rgba(224, 202, 60,1)'/%3E%3Ccircle cx='35' cy='15' r='1' fill='rgba(224, 202, 60,1)'/%3E%3Ccircle cx='5' cy='25' r='1' fill='rgba(224, 202, 60,1)'/%3E%3Ccircle cx='25' cy='25' r='1' fill='rgba(224, 202, 60,1)'/%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23doodad)' height='200%25' width='200%25'/%3E%3C/svg%3E ");
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: fixed;
+        left: 0;
+        border-right: 1px solid white;
+        height: 100%;
+        width: 27%;
+    }
+
+    header h1, header h3 {
+        background-color: #1A1A1B;
+        border-radius: 15px;
+    }
+
+    header h1:hover, h3:hover, .header--link:hover {
+        border: 2px solid #2BD9FE;
+        transition: border 0.7s ease-in-out;
+    }
+
+    header h1:not(:hover), h3:not(:hover), .header--link:not(:hover){
+        border: 2px solid transparent;
+        transition: border 0.7s ease-in-out;
+    }
+
+    header h1 {
+        max-width: 400px;
+        white-space: nowrap;
+        padding: 0 1rem;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+    }
+
+    header h3 {
+        padding: 0 1rem;
+        max-width: 400px;
+        margin: 0 auto 1rem auto;
+        font-size: 1.5rem;
+    }
+
+    .flex--row a {
+        padding: .5em .5em 0 .5em;
+        background-color: #1A1A1B;
+        border-radius: 15px;
+    }
+
+    .flex--row {
+        background: transparent;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    hr {
+        display: none;
+    }
+
+    .accordion {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: fixed;
+        right: 0;
+        width: 73%;
+        height: 100%;
+    }
+}

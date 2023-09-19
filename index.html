@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>First Lastname</title>
+</head>
+<body>
+
+    <!-- TODO
+        ? ANIMATIONS:
+            Move to mobile version? (get feedback maybe)
+        ? SKILLS :
+            Divide into libraries, frameworks, etc (if space allows)
+        ? BACKGROUND ARTWORK
+            Blender or some similar flavor
+        ? "Hi!"
+            Make a little thing pop up that says "hi" when img has :hover
+
+    -->
+
+
+    <!-- HEADER -->
+    <header>
+            <a href="https://github.com" target="#" class="profile--picture"><img class="profile--img" src="images/picture.jpg" height="200" width="200" alt="profile picture"></a>
+            <h1>First Lastname</h1>
+            <h3>Web Developer</h3>
+            <div class="flex--row">
+                <a href="mailto:bathinjan@gmail.com" target="#" class="header--link"><ion-icon name="mail-outline"></ion-icon></a>
+                <a href="https://github.com" target="#" class="header--link"><ion-icon name="logo-github"></ion-icon></a>
+                <a href="https://linkedin.com" target="#" class="header--link"><ion-icon name="logo-linkedin"></ion-icon></a>
+            </div>
+        <hr>
+    </header>
+
+    <!-- ACCORDION STRUCTURE -->
+
+        <ul class="accordion">
+
+            <!-- PROJECTS -->
+            <li class="accordion--li">
+                <input type="radio" name="accordion" id="first" checked>
+                <label for="first">
+                    <ion-icon name="folder-outline"></ion-icon>
+                    <h2>Projects</h2>
+                </label>
+                <div class="content" id="gap--container">
+                        <a href="#">Project #1</a>
+                        <a href="#">Project #2</a>
+                        <a href="#">Project #3</a>
+                        <a href="#">Project #4</a>
+                </div>
+            </li>
+
+            <!-- SKILLS -->
+            <li class="accordion--li">
+                <input type="radio" name="accordion" id="second">
+                <label for="second">
+                    <ion-icon name="ribbon-outline"></ion-icon>
+                    <h2>Skills</h2>
+                </label>
+                <div class="content" id="gap--container">
+                    <div class="sub--container">
+                    <p>React</p>
+                    <p>Typescript</p>
+                    <p>AWS</p>
+                    </div>
+                    <div class="sub--container">
+                    <p>Node.js</p>
+                    <p>MongoDB</p>
+                    <p>SQL</p>
+                    </div>
+                </div>
+            </li>
+
+            <!-- EXPERIENCE -->
+            <li class="accordion--li">
+                <input type="radio" name="accordion" id="third">
+                <label for="third">
+                    <ion-icon name="briefcase-outline"></ion-icon>
+                    <h2>Experience</h2>
+                </label>
+                <div class="content">
+                    <p>Game Developer -- 2021-Present</p>
+                    <p>Combat Crew Communications Technician -- 2016-2021</p>
+                    <p>Language Analyst -- 2011-2016</p>
+                    <p>United States Air Force -- 2011-2021</p>
+                </div>
+            </li>
+
+            <!-- EDUCATION -->
+            <li class="accordion--li">
+                <input type="radio" name="accordion" id="fourth">
+                <label for="fourth">
+                    <ion-icon name="school-outline"></ion-icon>
+                    <h2>Education</h2>
+                </label>
+                <div class="content">
+                    <p>B.S: Information Technology -- CSUDH 2022</p>
+                    <p>CompTIA Security+ Certification -- Expr. August 2026</p>
+                    <p>Arabic Language & Literature -- DLI 2012</p>
+                </div>
+            </li>
+            
+        </ul>
+
+    <!-- IonIcons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
