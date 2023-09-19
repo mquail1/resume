@@ -91,7 +91,7 @@ header h1, header h3, header h4 {
     transition: all 0.3s ease-in-out;
 }
 
-header h1, header h3, .header--link {
+header h1, header h3 {
     border: 2px solid transparent;
     transition: all 0.3s ease-in-out;
     border-radius: 15px;
@@ -103,14 +103,14 @@ header h1:hover, h3:hover, .header--link:hover {
     border-radius: 15px;
 }
 
-header h1:not(:hover), h3:not(:hover), .header--link:not(:hover){
+header h1:not(:hover), h3:not(:hover), .header--link:not(:hover) {
     border: 2px solid transparent;
     transition: border 0.7s ease-in-out;
     border-radius: 15px;
 }
 
 .flex--row {
-    background-color: #1A1A1B;
+    background-color: transparent;
     border-radius: 15px;
     display: flex;
     flex-direction: row;
@@ -118,26 +118,19 @@ header h1:not(:hover), h3:not(:hover), .header--link:not(:hover){
     align-items: center;
     gap: 2em;
     margin: .5em auto;
-    padding: .5em 0;
     max-width: 300px;
 }
 
-/* for some reason, header a tags have extra margin on bottom */
+/* ------------------------ FA ICONS ------------------------ */
+
 .header--link {
-    padding-top: .5em;
+    background-color: #1A1A1B;
+    padding: .5em;
 }
 
-/* ------------------------ ION ICONS ------------------------ */
-
-header ion-icon {
-    font-size: 2.5rem;
-}
-
-ion-icon {
-    /* border: 1px solid magenta; */
-    font-size: 2rem;
-    padding: 0 .2em;
-}
+/* .icon {
+    border: 1px solid cyan;
+} */
 
 /* --------------------- SPAN --------------------- */
 
@@ -209,7 +202,7 @@ label {
 
 /* Large phones / Tablets */
 @media (max-width: 900px) {
-    /* get rid of text --> ion icon */
+    /* get rid of text --> icon */
     header h1 {
         font-size: 2rem;
     }
@@ -252,7 +245,7 @@ label {
         font-size: 2rem;
     }
 
-    p, a {
+    p {
         font-size: 1.3rem;
     }
 
@@ -277,12 +270,16 @@ label {
         border-radius: 15px;
     }
 
-    header h1:hover, h3:hover, .header--link:hover {
+    /* .icon {
+        background-color: aqua;
+    } */
+
+    header h1:hover, h3:hover {
         border: 2px solid #2BD9FE;
         transition: border 0.7s ease-in-out;
     }
 
-    header h1:not(:hover), h3:not(:hover), .header--link:not(:hover){
+    header h1:not(:hover), h3:not(:hover) {
         border: 2px solid transparent;
         transition: border 0.7s ease-in-out;
     }
@@ -302,11 +299,11 @@ label {
         font-size: 1.5rem;
     }
 
-    .flex--row a {
+    /* .flex--row a {
         padding: .5em .5em 0 .5em;
         background-color: #1A1A1B;
         border-radius: 15px;
-    }
+    } */
 
     .flex--row {
         background: transparent;
