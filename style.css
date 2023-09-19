@@ -56,7 +56,6 @@ header {
 }
 
 header h1 {
-    /* border: 1px solid magenta; */
     margin: 0 auto;
     background-color: #1A1A1B;
     padding: .15em 0;
@@ -65,7 +64,6 @@ header h1 {
 }
 
 header h3 {
-    /* border: 1px solid cyan; */
     margin: .5em auto .5em auto;
     background-color: #1A1A1B;
     padding: .5em 0;
@@ -127,10 +125,6 @@ header h1:not(:hover), h3:not(:hover), .header--link:not(:hover) {
     background-color: #1A1A1B;
     padding: .5em;
 }
-
-/* .icon {
-    border: 1px solid cyan;
-} */
 
 /* --------------------- SPAN --------------------- */
 
@@ -270,10 +264,6 @@ label {
         border-radius: 15px;
     }
 
-    /* .icon {
-        background-color: aqua;
-    } */
-
     header h1:hover, h3:hover {
         border: 2px solid #2BD9FE;
         transition: border 0.7s ease-in-out;
@@ -298,12 +288,6 @@ label {
         margin: 0 auto 1rem auto;
         font-size: 1.5rem;
     }
-
-    /* .flex--row a {
-        padding: .5em .5em 0 .5em;
-        background-color: #1A1A1B;
-        border-radius: 15px;
-    } */
 
     .flex--row {
         background: transparent;
