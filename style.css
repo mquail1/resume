@@ -55,6 +55,10 @@ header {
     padding-top: 1em;
 }
 
+header h1, header h3, header h4 {
+    text-align: center;
+}
+
 header h1 {
     margin: 0 auto;
     background-color: #1A1A1B;
@@ -70,40 +74,8 @@ header h3 {
     max-width: 300px;
 }
 
-header h1, header h3, header h4 {
-    text-align: center;
-}
-
 .profile--img {
     margin: 0 auto 1em auto;
-    border-radius: 15px;
-}
-
-.profile--img:hover {
-    border: 2px solid #2BD9FE;
-    transition: all 0.3s ease-in-out;
-}
-
-.profile--img:not(:hover) {
-    border: 2px solid transparent;
-    transition: all 0.3s ease-in-out;
-}
-
-header h1, header h3 {
-    border: 2px solid transparent;
-    transition: all 0.3s ease-in-out;
-    border-radius: 15px;
-}
-
-header h1:hover, h3:hover, .header--link:hover {
-    border: 2px solid #2BD9FE;
-    transition: border 0.7s ease-in-out;
-    border-radius: 15px;
-}
-
-header h1:not(:hover), h3:not(:hover), .header--link:not(:hover) {
-    border: 2px solid transparent;
-    transition: border 0.7s ease-in-out;
     border-radius: 15px;
 }
 
@@ -126,10 +98,56 @@ header h1:not(:hover), h3:not(:hover), .header--link:not(:hover) {
     padding: .5em;
 }
 
+/* ------------------------ BORDER ANIMATIONS ------------------------ */
+
+.profile--img:hover {
+    border: 2px solid #2BD9FE;
+    transition: all 0.3s ease-in-out;
+}
+
+header h1, header h3 {
+    border: 2px solid transparent;
+    transition: all 0.3s ease-in-out;
+    border-radius: 15px;
+}
+
+.profile--img:not(:hover) {
+    border: 2px solid transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+header h1:hover, h3:hover, .header--link:hover, label:hover {
+    border: 2px solid #2BD9FE;
+    transition: border 0.5s ease-in-out;
+    border-radius: 15px;
+}
+
+header h1:not(:hover), h3:not(:hover), .header--link:not(:hover) {
+    border: 2px solid transparent;
+    transition: border 0.5s ease-in-out;
+    border-radius: 15px;
+}
+
+label:not(:hover) {
+    border: 2px solid rgba(221, 255, 247, 0.3);
+    transition: border 0.5s ease-in-out;
+}
+
+.content a:hover, .content p:hover {
+    color: #2BD9FE;
+    transition: color 0.3s ease-in-out;
+}
+
+.content a:not(:hover), .content p:not(:hover) {
+    color: #DDFFF7;
+    transition: color 0.3s ease-in-out;
+}
+
 /* --------------------- SPAN --------------------- */
 
 hr {
-    color: transparent;
+    /* Fixes transparency issue w/ Chrome */
+    clear: both;
     margin: 1em auto 0 auto;
 }
 
@@ -161,10 +179,14 @@ input[type = "radio"] {
     cursor: pointer;
 }
 
+.content a, .content p {
+    font-size: 1.1em;
+}
+
 label {
     max-width: 20%;
     margin: 0 auto .5em auto;
-    border: 1px solid white;
+    border: 1px solid #DDFFF7;
     border-radius: 15px;
     display: flex;
     justify-content: center;
@@ -185,6 +207,30 @@ label {
     flex-direction: column;
 }
 
+/* --------------------- DETAIL / SUMMARY --------------------- */
+
+details {
+    font-size: 1.2rem;
+    transition: color .3s ease-in-out;
+    cursor: pointer;
+}
+
+summary {
+    font-size: 1.4rem;
+    transition: color .3s ease-in-out;
+}
+
+details[open] {
+    color: #E0CA3C;
+    transition: color .3s ease-in-out;
+}
+
+details[open] summary {
+    color: #2BD9FE;
+    text-decoration: underline;
+    transition: color .3s ease-in-out;
+}
+
 /* --------------------- MEDIA QUERIES --------------------- */
 
 /* X-Small Phones */
@@ -192,11 +238,19 @@ label {
     header h1 {
         font-size: 2rem;
     }
+
+    details {
+        font-size: 1rem;
+    }
+    
+    summary {
+        font-size: 1rem;
+    }
 }
 
 /* Large phones / Tablets */
 @media (max-width: 900px) {
-    /* get rid of text --> icon */
+
     header h1 {
         font-size: 2rem;
     }
@@ -221,14 +275,13 @@ label {
         font-size: 2.1rem;
     }
 
-    h4, p, a {
+    h4, .content p, .content a {
         font-size: 1.5rem;
     }
-
 }
 
-/* Fullscreen / PC */
-@media (min-aspect-ratio: 16 / 9) {
+/* Fullscreen / PC / Fullscreen Laptops */
+@media (min-aspect-ratio: 16 / 9), (min-aspect-ratio: 16/10) {
 
     body {
         width: 100%;
@@ -239,8 +292,8 @@ label {
         font-size: 2rem;
     }
 
-    p {
-        font-size: 1.3rem;
+    .content p, .content a {
+        font-size: 1.4rem;
     }
 
     label {
@@ -254,7 +307,7 @@ label {
         justify-content: center;
         position: fixed;
         left: 0;
-        border-right: 1px solid white;
+        border-right: 1px solid #DDFFF7;
         height: 100%;
         width: 27%;
     }
