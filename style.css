@@ -98,7 +98,7 @@ header h3 {
     padding: .5em;
 }
 
-/* ------------------------ BORDER ANIMATIONS ------------------------ */
+/* ------------------------ COLOR ANIMATIONS ------------------------ */
 
 .profile--img:hover {
     border: 2px solid #2BD9FE;
@@ -133,12 +133,12 @@ label:not(:hover) {
     transition: border 0.5s ease-in-out;
 }
 
-.content a:hover, .content p:hover {
+.content a:hover, details:hover {
     color: #2BD9FE;
     transition: color 0.3s ease-in-out;
 }
 
-.content a:not(:hover), .content p:not(:hover) {
+.content a:not(:hover), details:not(:hover) {
     color: #DDFFF7;
     transition: color 0.3s ease-in-out;
 }
@@ -281,7 +281,11 @@ details[open] summary {
 }
 
 /* Fullscreen / PC / Fullscreen Laptops */
-@media (min-aspect-ratio: 16 / 9), (min-aspect-ratio: 16/10) {
+/*! Below doesn't work due to landscape orientation on mobile*/
+/* @media (min-aspect-ratio: 16 / 9), (min-aspect-ratio: 16/10)  */
+/*! Corrected to just below 1920 fullscreen pixel width */
+@media (min-width: 1800px)
+{
 
     body {
         width: 100%;
